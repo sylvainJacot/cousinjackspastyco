@@ -12,7 +12,7 @@ const NavWrapper = styled.p`
             a {
                 font-family: 'Arvo', serif;
                 color: ${colorsStyle.secondary};
-                font-size: 40px;
+                size: 30px;
             }
         }
     }
