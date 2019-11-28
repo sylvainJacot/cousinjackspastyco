@@ -19,6 +19,16 @@ const NavWrapper = styled.p`
 
 
 export class Navigation extends React.Component {
+<<<<<<< HEAD
+   
+=======
+    state = { currentSrc: '' };
+    onLoad = (event) => {
+        this.setState({
+          currentSrc: event.target.currentSrc
+        });
+      }
+>>>>>>> b6d21c594418571673a509fd1960f8b86b2dd979
     render() {
         return (
             <NavWrapper>
@@ -26,11 +36,14 @@ export class Navigation extends React.Component {
                 <ul>
                     <li><a>Item</a></li>
                     <li><a>Item</a></li>
+<<<<<<< HEAD
                     <li><a>
                             <img src={logoS}/>
                         </a>
                     </li>
-
+=======
+ 
+>>>>>>> b6d21c594418571673a509fd1960f8b86b2dd979
                     <li><a>Item</a></li>
                     <li><a>Item</a></li>
                 </ul>

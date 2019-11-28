@@ -19,6 +19,16 @@ const NavWrapper = styled.p`
 
 
 export class Navigation extends React.Component {
+<<<<<<< HEAD
+   
+=======
+    state = { currentSrc: '' };
+    onLoad = (event) => {
+        this.setState({
+          currentSrc: event.target.currentSrc
+        });
+      }
+>>>>>>> b6d21c594418571673a509fd1960f8b86b2dd979
     render() {
         return (
             <NavWrapper>
