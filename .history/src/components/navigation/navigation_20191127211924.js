@@ -1,0 +1,42 @@
+import React from 'react';
+import styled from 'styled-components';
+import logoL from '../../assets/svg/CousinJacks_Logo_Horizontal.svg';
+import logoS from '../../assets/svg/CousinJacks_Logo.Vertical.svg';
+
+const NavWrapper = styled.p`
+    ul {
+        display: flex;
+    }
+`;
+
+export class Navigation extends React.Component {
+    state = { currentSrc: '' };
+
+    onLoad = (event) => {
+      this.setState({
+        currentSrc: event.target.currentSrc
+      });
+    }
+    render() {
+        const image1 = {logoS};
+        const image2 = {logoL};
+        return (
+            <NavWrapper>
+                
+                <ul>
+                    <li>Item</li>
+                    <li>Item</li>
+                    <li><img 
+                    src={logoS}
+                    srcset={`${image1} 300w,${image2} 1440w`}
+                    /></li>
+                    <li>Item</li>
+                    <li>Item</li>
+                </ul>
+    
+            </NavWrapper>
+        )
+    }
+  }
+  
+  export default Navigation;
