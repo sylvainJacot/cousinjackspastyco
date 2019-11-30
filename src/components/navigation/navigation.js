@@ -28,7 +28,16 @@ export class Navigation extends React.Component {
                     <li><a>Item</a></li>
                     <li><a>Item</a></li>
                     <li><a>
-                            <img src={logoS}/>
+                            <picture>
+                                <source 
+                                    srcSet={`${logoL}`}
+                                    media={`(min-width: ${media.sizes.tablet} )`}
+                                />
+                                <img src={logoS}
+                                    alt="Logo"
+                                    srcSet={`${logoS}`}
+                                />    
+                            </picture>
                         </a>
                     </li>
 
@@ -42,3 +51,5 @@ export class Navigation extends React.Component {
   }
   
   export default Navigation;
+
+//   <img src={`https://robohash.org/${props.user.id}?set=set6`} />
