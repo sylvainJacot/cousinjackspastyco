@@ -1,0 +1,23 @@
+import React from 'react';
+import PropTypes from 'prop-t'
+
+
+export class ResponsiveImage extends React.Component {
+    static PropTypes = {
+
+    }
+    render() {
+        const {sourceMobile, altImage, sourceDesktop} = this.props;
+        return (
+            <picture>
+                                        <img src={sourceMobile}
+                                            alt={altImage}
+                                        />   
+                                        <source 
+                                            srcSet={sourceDesktop}
+                                            media="(min-width: 1440px)"
+                                        /> 
+                                    </picture>
+        )
+    }
+};
