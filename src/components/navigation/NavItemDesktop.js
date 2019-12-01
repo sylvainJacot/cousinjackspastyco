@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 import logoL from '../../assets/svg/CousinJacks_Logo_Horizontal.svg';
 import logoS from '../../assets/svg/CousinJacks_Logo.Vertical.svg';
 import {ResponsiveImage} from '../default/ResponsiveImage';
@@ -9,7 +10,7 @@ import { sizes } from '../default/mediaqueries';
 
 
 const Li = styled.li`
-            margin: ${props => props.margesLi ? "0 12px" : "0 20px"};
+            margin: ${props => props.margesLi ? "0 4px" : "0 20px"};
             a {
                 font-family: 'Arvo', serif;
                 font-weight: bold;
@@ -33,10 +34,10 @@ export class NavItemDesktop extends React.Component {
         href: PropTypes.string,
     }
     render() {
-        const {key, margesLi, href, image, label} = this.props;
+        const {key, margesLi, pathLink, image, label,exact} = this.props;
         return (
             <Li key={key} margesLi={margesLi}>
-                             <a href={href}>
+                             <Link to={pathLink} exact={exact}>
 
                                  {image ?
                                    <ResponsiveImage
@@ -48,7 +49,7 @@ export class NavItemDesktop extends React.Component {
                                 :
                                 <>{label}</>
                                  }
-                                 </a>
+                                 </Link>
                         </Li>
         )
     }
