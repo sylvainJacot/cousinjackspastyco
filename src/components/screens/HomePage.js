@@ -1,13 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {Switch,Route} from "react-router-dom";
 import {sizes} from '../default/mediaqueries';
 import {NavigationDesktop} from '../navigation/NavigationDesktop';
 import { NavigationMobile } from '../navigation/NavigationMobile';
 import { MenuPage } from './MenuPage';
 import { StoreLocations } from './StoreLocations';
-import { NavDesktop } from '../navigation/TestNavDesktop';
-import { NavMobile } from '../navigation/TestNavMobile';
+
 
 
 
@@ -36,13 +34,12 @@ export class HomePage extends React.Component {
         const isDesktop = this.state.isDesktopL;
         return (
             <>
-            <NavigationDesktop/>
-            <NavigationMobile/>
+            {isDesktop ? <NavigationDesktop/> :  <NavigationMobile/>} 
             <Switch>
                 <Route path="/MenuPage"><MenuPage/></Route> 
                 <Route path="/StoreLocations"><StoreLocations/></Route>
             </Switch>
-            {isDesktop ? <NavDesktop/> :  <NavMobile/>} 
+            
             </>
         )
     }

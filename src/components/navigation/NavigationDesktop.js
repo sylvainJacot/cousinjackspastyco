@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import burgerMenu from '../../assets/svg/Burger_Menu.svg'
 import {NavItemDesktop } from './NavItemDesktop';
 import {listItems} from '../../constant/navigation-mock';
 

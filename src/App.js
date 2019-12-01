@@ -11,6 +11,7 @@ background-color: grey;
 `
 
 const BodyWrapper = styled.div`
+padding: 0 24px;
 ${media.desktopL`
 width: 1232px;
 margin: auto;
