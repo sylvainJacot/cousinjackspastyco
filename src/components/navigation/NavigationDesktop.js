@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 // import burgerMenu from '../../assets/svg/Burger_Menu.svg'
 import {NavItemDesktop } from './NavItemDesktop';
+import {listItems} from '../../constant/navigation-mock';
 
 const NavWrapper = styled.div`
 text-align: center;
@@ -11,53 +12,9 @@ text-align: center;
         align-items: center;
         justify-content: center;
     }
+
 `;
 
-
-const listItems = [
-    {
-        id:0,
-        label:"Home",
-        href:"href01",
-    },
-    {
-        id:1,
-        label:"Menu",
-        href:"href012",
-
-    },
-    {
-        id:2,
-        label:"Store locations",
-        href:"href012",
-
-    },
-    {
-        id:3,
-        label:"Logo Cousin Jacks",
-        href:"href01",
-        image: true,
-        margesLi: true
-    },
-    {
-        id:4,
-        label:"Our history",
-        href:"href01",
-
-    },
-    {
-        id:5,
-        label:"News",
-        href:"href01",
-
-    },
-    {
-        id:6,
-        label:"Contact",
-        href:"href012",
-
-    },
-] 
 
 export class NavigationDesktop extends React.Component {
 
@@ -72,9 +29,10 @@ export class NavigationDesktop extends React.Component {
                          <NavItemDesktop 
                          key={listItem.id}
                          margesLi={listItem.margesLi}
-                         href={listItem.href}
+                         pathLink={listItem.pathLink}
                          label={listItem.label}
                          image={listItem.image}
+                         exact={listItem.exact}
                          />
                         ))}
                     

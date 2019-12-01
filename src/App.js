@@ -1,8 +1,9 @@
 import React from 'react';
 import './reset.css';
 import styled from 'styled-components';
-import {media} from './components/default/mediaqueries'
-import {NavigationDesktop} from './components/navigation/NavigationDesktop';
+import {BrowserRouter as Router} from "react-router-dom";
+import {media} from './components/default/mediaqueries';
+import {HomePage} from './components/screens/HomePage';
 
 const APP = styled.div`
 height: 100vh;
@@ -19,11 +20,13 @@ margin: auto;
 export class App extends React.Component {
   render() {
       return (
+        <Router>
           <APP>
             <BodyWrapper>
-            <NavigationDesktop />
+            <HomePage/>
             </BodyWrapper>
           </APP>
+          </Router>
       )
   }
 }
