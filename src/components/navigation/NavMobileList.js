@@ -11,6 +11,7 @@ background-color: ${colorsStyle.white};
 width: 100vw;
 height: 400px;
 transform: translateX(-24px);
+padding-top: ${props => props.logoHeight + 16}px;
 text-align:center;
 ul {
     display: flex;
@@ -21,7 +22,7 @@ ul {
 export class NavMobileList extends React.Component {
     render() {
         return (
-            <NavMobileListWrapper>
+            <NavMobileListWrapper logoHeight={this.props.height}>
                 <ul>
                 {listItems.map(listItem =>(
                     <NavMobileListItem 

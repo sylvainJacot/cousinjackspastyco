@@ -15,7 +15,7 @@ h1 {
     a {
         display: block;
     #LogoS {
-        width:96px;
+        height:104px;
     }
 }
 }
@@ -29,19 +29,41 @@ h1 {
 `
 
 export class NavigationMobile extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            height: 0,
+        }
+        this.logo = React.createRef();
+    }
+
+    catchHeight = () => {
+       this.setState({height : this.logo.current.clientHeight});
+    }
+    componentDidMount () {
+        this.catchHeight()
+    }
     render() {
+console.log(this.state.height)
         return (
             <>
             <NavMobileWrapper>
                 <h1>
                     <Link to={listItems[3].pathLink}>
-                        <img src={LogoS} id="LogoS" />
+                        <img 
+                        src={LogoS} 
+                        id="LogoS" 
+                        ref={this.logo}
+                        />
                     </Link>
+                    <p>Il fait {this.state.height}</p>
                 </h1>
-                <NavMobileList/>
+                <NavMobileList height={this.state.height}/>
                 <img src={MenuIcon} id="MenuIcon"/>
             </NavMobileWrapper>
             </>
         )
     }
 }
+
+// logoHeight={height}
