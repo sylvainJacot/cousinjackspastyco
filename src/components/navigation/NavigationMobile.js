@@ -20,42 +20,37 @@ h1 {
     }
 }
 }
-a{
-    cursor: pointer;
-    svg {
-        position: absolute;
-        right: 0;
-        bottom: 50%;
-        transform: translateY(50%);
-
-        #borderspasty {
-            fill:${props => props.borderspasty};
-        }
-    }
+button {
+position: absolute;
+z-index: 99;
 }
-`
+`;
 
 export class NavigationMobile extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
         this.state = {
             height: 0,
-        }
+            isListMenuOpen: false,
+        };
         this.logo = React.createRef();
     }
 
     catchHeight = () => {
        this.setState({height : this.logo.current.clientHeight});
-    }
+    };
     componentDidMount () {
-        this.catchHeight()
-    }
-    triggerMenu () {
+        this.catchHeight();
+    };
 
-    }
+    toggleListMenu = () => {
+        this.setState(
+            {isListMenuOpen: !this.state.isListMenuOpen});
+    };
 
     render() {
-console.log(this.state.height)
+
+
         return (
             <>
             <NavMobileWrapper>
@@ -68,9 +63,15 @@ console.log(this.state.height)
                         />
                     </Link>
                 </h1>
-                <NavMobileList height={this.state.height}/>
-                <IcBurger borderspasty={`${colorsStyle.secondary}`}/>
+                    <NavMobileList height={this.state.height} menuActive={this.state.isListMenuOpen}/>
+                }
+                 <IcBurger
+                    borderspasty={`${colorsStyle.secondary}`}
+                    onClickListMenuButton={this.toggleListMenu}
+                    menuActive={this.state.isListMenuOpen}
+                />
             </NavMobileWrapper>
+
             </>
         )
     }

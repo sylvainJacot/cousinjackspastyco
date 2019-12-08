@@ -7,22 +7,25 @@ import {listItems} from '../../constant/navigation-mock';
 
 const NavMobileListWrapper = styled.div`
 position: absolute;
-background-color: ${colorsStyle.white};
+background-color: ${props => props.active ? 'red' : colorsStyle.white};
 width: 100vw;
 height: 400px;
 transform: translateX(-24px);
 padding-top: ${props => props.logoHeight + 16}px;
 text-align:center;
+right: ${props => props.listMenuOpen ? '0px' : '-100vw'};
+transition: all .3s ease-in-out;
 ul {
     display: flex;
     flex-direction: column;
 }
 `
 
-export class NavMobileList extends React.Component {
+export class  NavMobileList extends React.Component {
     render() {
+        const {menuActive, height} = this.props;
         return (
-            <NavMobileListWrapper logoHeight={this.props.height}>
+            <NavMobileListWrapper logoHeight={height} listMenuOpen={menuActive}>
                 <ul>
                 {listItems.map(listItem =>(
                     <NavMobileListItem 
