@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom';
 import {listItems} from '../../constant/navigation-mock';
 import {NavMobileList} from '../navigation/NavMobileList';
 import LogoS from '../../assets/svg/CousinJacks_Logo.Vertical.svg';
-import MenuIcon from '../../assets/svg/Burger_Menu.svg';
+import {colorsStyle} from '../default/colors';
+import {IcBurger} from '../default/icons';
 
 const NavMobileWrapper = styled.div`
 display: flex;
@@ -19,13 +20,19 @@ h1 {
     }
 }
 }
-    #MenuIcon {
+a{
+    cursor: pointer;
+    svg {
         position: absolute;
-        width: 48px;
         right: 0;
         bottom: 50%;
         transform: translateY(50%);
+
+        #borderspasty {
+            fill:${props => props.borderspasty};
+        }
     }
+}
 `
 
 export class NavigationMobile extends React.Component {
@@ -43,6 +50,10 @@ export class NavigationMobile extends React.Component {
     componentDidMount () {
         this.catchHeight()
     }
+    triggerMenu () {
+
+    }
+
     render() {
 console.log(this.state.height)
         return (
@@ -56,10 +67,9 @@ console.log(this.state.height)
                         ref={this.logo}
                         />
                     </Link>
-                    <p>Il fait {this.state.height}</p>
                 </h1>
                 <NavMobileList height={this.state.height}/>
-                <img src={MenuIcon} id="MenuIcon"/>
+                <IcBurger borderspasty={`${colorsStyle.secondary}`}/>
             </NavMobileWrapper>
             </>
         )
