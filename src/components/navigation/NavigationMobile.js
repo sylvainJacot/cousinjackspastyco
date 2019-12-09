@@ -64,7 +64,7 @@ export class NavigationMobile extends React.Component {
                     </Link>
                 </h1>
                     <NavMobileList height={this.state.height} menuActive={this.state.isListMenuOpen}/>
-                }
+
                  <IcBurger
                     borderspasty={`${colorsStyle.secondary}`}
                     onClickListMenuButton={this.toggleListMenu}

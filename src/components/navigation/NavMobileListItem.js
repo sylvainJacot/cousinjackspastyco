@@ -2,7 +2,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import PropTypes from 'prop-types';
 import {colorsStyle} from '../default/colors';
 
 const NavMobileListItemWrapper = styled.div`
@@ -30,17 +29,13 @@ export class NavMobileListItem extends React.Component {
     render() {
     const {key,path,label,image} = this.props;
         return (
-            <NavMobileListItemWrapper>
+            <NavMobileListItemWrapper>{image ? null :
                 <li key={key}>
                     <Link to={path}>
-                        {image ?
-                        null 
-                        :
-                        <>{label}</>
-                        }
+                        {label}
                     </Link>
-                    <UnderLine></UnderLine>
-                </li>
+                    <UnderLine />
+                </li>}
             </NavMobileListItemWrapper>
         )
     }

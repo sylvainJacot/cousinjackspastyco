@@ -1,4 +1,5 @@
 import React from 'react';
+import {Animations} from '../default/animations';
 import styled from "styled-components";
 
 const AWrapper = styled.button`
@@ -12,6 +13,7 @@ const AWrapper = styled.button`
 
         #borderspasty {
             fill: ${props => props.listMenuOpen ? 'black' : 'white'};
+            transition: ${Animations.default};
         }
     }
 `;
