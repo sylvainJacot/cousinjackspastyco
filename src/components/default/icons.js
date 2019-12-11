@@ -1,6 +1,7 @@
 import React from 'react';
 import {Animations} from '../default/animations';
 import styled from "styled-components";
+import ArrowHandDrawn from '../../assets/svg/Arrow-HandDrawn.svg'
 
 const AWrapper = styled.button`
     cursor: pointer;
@@ -59,3 +60,6 @@ height: 86px;
     }
 };
 
+  export const svgicons = {
+      arrowHandDrawn: ArrowHandDrawn,
+  }
