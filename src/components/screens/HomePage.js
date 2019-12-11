@@ -13,7 +13,7 @@ export class HomePage extends React.Component {
     constructor() {
         super();
         this.state = {
-            isDesktopL: false,
+            isDesktop: false,
         };
         this.updatePredicate = this.updatePredicate.bind(this);
     }
@@ -27,11 +27,11 @@ export class HomePage extends React.Component {
       }
     
       updatePredicate() {
-        this.setState({ isDesktopL: window.innerWidth >= sizes.desktopL });
+        this.setState({ isDesktop: window.innerWidth >= sizes.desktop });
       }
 
     render() {
-        const isDesktop = this.state.isDesktopL;
+        const isDesktop = this.state.isDesktop;
         return (
             <>
             {isDesktop ? <NavigationDesktop/> :  <NavigationMobile/>} 

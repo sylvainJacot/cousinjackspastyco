@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
+import {media} from '../default/mediaqueries';
 import logoL from '../../assets/svg/CousinJacks_Logo_Horizontal.svg';
 import logoS from '../../assets/svg/CousinJacks_Logo.Vertical.svg';
 import {ResponsiveImage} from '../default/ResponsiveImage';
@@ -18,7 +19,10 @@ const Li = styled.li`
                 font-size: 16px;
                 text-decoration: none;
                 img {
-                    width: 400px;
+                    width: 156px;
+                 ${media.desktopL`
+                 width: 400px;
+                 `}
                 }
             &:hover {
                 color: ${colorsStyle.primary}
