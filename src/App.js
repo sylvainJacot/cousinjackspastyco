@@ -11,12 +11,13 @@ background-color: grey;
 `
 
 const BodyWrapper = styled.div`
+position: relative;
 padding: 0 24px;
 ${media.desktopL`
 width: 1232px;
 margin: auto;
 `}
-`
+`;
 
 export class App extends React.Component {
   render() {

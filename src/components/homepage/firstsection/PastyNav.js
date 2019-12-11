@@ -6,94 +6,99 @@ import {svgicons} from '../../default/icons';
 import {absoluteCenter} from '../../default/alignements';
 import {Animations} from '../../default/animations';
 
-const ChooseTxt = styled.p`
-font-family: Arvo-Bold, sans-serif;
-color: ${colorsStyle.white};
-font-size: 24px;
-margin-left: 48px;
-line-height: 24px;
+const ChooseYourPasty = styled.p``;
+const Pasty = styled.img``;
+const PastyWrapper = styled.div``;
+const PastyNavWrapper = styled.div`
 `;
-const ArrowHandDrawn = styled.img`
-position: absolute;
-left: 0;
-top: 24px;
-width: 104px;
-`;
-const Pasty = styled.img`
-width: 360px;
-height: 148px;
-z-index: 1;
-${absoluteCenter};
-`;
-const Circle = styled.div`
-display: block;
-width: 200px;
-height: 200px;
-border-radius: 50%;
-background: ${colorsStyle.white};
-
-`;
-const PastyWrapper = styled.div`
+const PastyNavLink = styled.a`
 display: block;
 position: relative;
-width: fit-content;
-margin-left: 124px;
-margin-top: 40px;
-    &::after {
-        content: "";
-        display: inline-block;
-        width: 200px;
-        height: 200px;
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        transform: translate(50%,-50%) scale(1);
-        border-radius: 50%;
-        border: 0px solid ${colorsStyle.primary};
-        transition: ${Animations.default};
-        }
-      &:hover:after {
+margin-top: 64px;
+
+  ${ChooseYourPasty} {
+    position: relative;
+    font-family: Arvo-Bold, sans-serif;
+    text-transform: uppercase;
+    color: ${colorsStyle.white};
+    font-size: 16px;
+    margin-left: 48px;
+    margin-bottom: 48px;
+    line-height: 24px;
+    
+    &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    left: -51px;
+    top: 12px;
+    background: url("${svgicons.arrowHandDrawn}") no-repeat;
+    background-size: contain;
+    z-index: 2;
+    transform: rotate(16deg);
+    }
+  }
+  ${PastyWrapper} {
+  position: relative;
+  width: fit-content;
+  
+    &:before {
+    content:"";
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    ${absoluteCenter};
+    background: ${colorsStyle.white};
+    }
+    &:after {
+     content: "";
+     display: inline-block;
+     width: 200px;
+     height: 200px;
+     position: absolute;
+     top: 50%;
+     right: 50%;
+     transform: translate(50%,-50%) scale(1);
+     border-radius: 50%;
+     border: 0px solid ${colorsStyle.primary};
+     transition: ${Animations.default};
+    }
+    &:hover:after {
         transform: translate(50%,-50%) scale(1.15);
         border: 1px solid ${colorsStyle.primary};
         transition: ${Animations.default};
       }
-      &:hover ${Pasty} {
-      transform: translate(50%,-50%) rotate(-4deg);
-      transition: ${Animations.default};
+    &:hover:before {
+        transform: translate(50%,-50%) scale(1.15);
+        transition: ${Animations.default};
       }
+   &:hover ${Pasty} {
+      transform: rotate(-4deg);
+      transition: ${Animations.default};
+      }   
+  
+  ${Pasty} {
+    position: inherit;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+  }
+  }
 `;
-const PastyNavWrapper = styled.a`
-display: block;
-position: relative;
-cursor: pointer;
-`;
-
 
 export class PastyNav extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            hoverActivation: false,
-        };
-    }
-    toggleHover = () => {
-        this.setState(
-            {hoverActivation: !this.state.hoverActivation});
-        console.log("hover fonctionnel");
-    };
     render() {
         return (
-            <PastyNavWrapper
-                //onMouseOver={this.toggleHover}
-            >
-                <ChooseTxt>Choose your pasty</ChooseTxt>
-                <ArrowHandDrawn src={svgicons.arrowHandDrawn}/>
-                <PastyWrapper
-                    //hoverActive={this.state.hoverActivation}
-                >
-                    <Pasty src={img.pasty}/>
-                    <Circle></Circle>
-                </PastyWrapper>
+            <PastyNavWrapper>
+                <PastyNavLink>
+                    <ChooseYourPasty>Choose your pasty</ChooseYourPasty>
+                    <PastyWrapper>
+                        <Pasty src={img.pasty}/>
+                    </PastyWrapper>
+                </PastyNavLink>
             </PastyNavWrapper>
 
         )
