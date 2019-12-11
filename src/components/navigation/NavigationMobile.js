@@ -14,14 +14,14 @@ position: relative;
     justify-content: center;
     `}
 h1 {
-    z-index: 1;
+    z-index: 3;
     a {
         display: block; 
 }
 }
 button {
 position: absolute;
-z-index: 99;
+z-index: 3;
 }
 `;
 

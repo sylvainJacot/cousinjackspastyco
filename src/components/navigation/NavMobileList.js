@@ -10,12 +10,13 @@ const NavMobileListWrapper = styled.div`
 position: absolute;
 background-color: ${props => props.active ? 'red' : colorsStyle.white};
 width: 100vw;
-height: 400px;
+height: 100vh;
 transform: translateX(24px);
 padding-top: ${props => props.logoHeight + 16}px;
 text-align:center;
 right: ${props => props.listMenuOpen ? '0px' : '-100vw'};
 transition: ${Animations.default};;
+z-index: 2;
 ul {
     display: flex;
     flex-direction: column;
