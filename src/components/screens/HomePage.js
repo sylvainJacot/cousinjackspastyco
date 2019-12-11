@@ -5,6 +5,7 @@ import {NavigationDesktop} from '../navigation/NavigationDesktop';
 import { NavigationMobile } from '../navigation/NavigationMobile';
 import { MenuPage } from './MenuPage';
 import { StoreLocations } from './StoreLocations';
+import { Firstsection } from '../homepage/firstsection/firstsection';
 
 
 
@@ -39,7 +40,7 @@ export class HomePage extends React.Component {
                 <Route path="/MenuPage"><MenuPage/></Route> 
                 <Route path="/StoreLocations"><StoreLocations/></Route>
             </Switch>
-            
+                <Firstsection/>
             </>
         )
     }
