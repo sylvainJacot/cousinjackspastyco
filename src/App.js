@@ -13,6 +13,12 @@ background-color: grey;
 const BodyWrapper = styled.div`
 position: relative;
 padding: 0 24px;
+margin: auto;
+
+${media.desktop`
+padding: 0 80px;
+`}
+
 ${media.desktopL`
 width: 1232px;
 margin: auto;

@@ -5,6 +5,7 @@ import {listItems} from '../../constant/navigation-mock';
 
 const NavWrapper = styled.div`
 text-align: center;
+margin-bottom: 40px;
     ul {
         display: flex;
         flex-wrap: wrap;

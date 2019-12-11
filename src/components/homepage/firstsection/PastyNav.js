@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {media} from '../../default/mediaqueries';
 import {colorsStyle} from "../../default/colors";
 import {img} from '../../default/img';
 import {svgicons} from '../../default/icons';
@@ -10,11 +11,17 @@ const ChooseYourPasty = styled.p``;
 const Pasty = styled.img``;
 const PastyWrapper = styled.div``;
 const PastyNavWrapper = styled.div`
+    ${media.desktop`
+        grid-column: 7 / 11;
+        justify-self: center;
+    `}
 `;
 const PastyNavLink = styled.a`
-display: block;
 position: relative;
-margin-top: 64px;
+display: flex;
+flex-wrap: wrap;
+justify-items: center;
+width: min-content;
 
   ${ChooseYourPasty} {
     position: relative;
@@ -22,9 +29,12 @@ margin-top: 64px;
     text-transform: uppercase;
     color: ${colorsStyle.white};
     font-size: 16px;
-    margin-left: 48px;
     margin-bottom: 48px;
     line-height: 24px;
+    ${media.desktop`
+        font-size: 24px;
+        margin-bottom: 56px;
+    `}
     
     &:after {
     content: "";
@@ -33,11 +43,17 @@ margin-top: 64px;
     width: 64px;
     height: 64px;
     left: -51px;
-    top: 12px;
+    top: 8px;
     background: url("${svgicons.arrowHandDrawn}") no-repeat;
     background-size: contain;
     z-index: 2;
-    transform: rotate(16deg);
+    transform: rotate(24deg);
+    ${media.desktop`
+        width: 80px;
+        height: 80px;
+        left: -48px;
+        top: 16px;
+    `}
     }
   }
   ${PastyWrapper} {
@@ -52,6 +68,10 @@ margin-top: 64px;
     border-radius: 50%;
     ${absoluteCenter};
     background: ${colorsStyle.white};
+    ${media.desktop`
+        width: 178px;
+        height: 178px;
+    `}
     }
     &:after {
      content: "";
@@ -85,6 +105,9 @@ margin-top: 64px;
     z-index: 1;
     width: 100%;
     height: auto;
+    ${media.desktop`
+        width: 296px;
+    `}
   }
   }
 `;
