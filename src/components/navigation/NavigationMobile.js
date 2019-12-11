@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {media} from '../default/mediaqueries';
 import {listItems} from '../../constant/navigation-mock';
 import {NavMobileList} from '../navigation/NavMobileList';
 import {colorsStyle} from '../default/colors';
@@ -9,9 +10,11 @@ import {IcBurger, LogoCousinJackVertical} from '../default/icons';
 const NavMobileWrapper = styled.div`
 display: flex;
 position: relative;
+    ${media.tablet`
+    justify-content: center;
+    `}
 h1 {
     z-index: 1;
-
     a {
         display: block; 
 }
@@ -57,6 +60,7 @@ export class NavigationMobile extends React.Component {
                     <Link to={listItems[3].pathLink}>
                         <LogoCousinJackVertical
                         id="LogoS"
+                        menuActive={this.state.isListMenuOpen}
                         />
                     </Link>
                 </h1>
