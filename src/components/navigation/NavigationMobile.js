@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {listItems} from '../../constant/navigation-mock';
 import {NavMobileList} from '../navigation/NavMobileList';
-import LogoS from '../../assets/svg/CousinJacks_Logo.Vertical.svg';
 import {colorsStyle} from '../default/colors';
-import {IcBurger} from '../default/icons';
+import {IcBurger, LogoCousinJackVertical} from '../default/icons';
 
 const NavMobileWrapper = styled.div`
 display: flex;
@@ -14,10 +13,7 @@ h1 {
     z-index: 1;
 
     a {
-        display: block;
-    #LogoS {
-        height:104px;
-    }
+        display: block; 
 }
 }
 button {
@@ -26,6 +22,7 @@ z-index: 99;
 }
 `;
 
+
 export class NavigationMobile extends React.Component {
     constructor(props) {
         super(props);
@@ -33,14 +30,15 @@ export class NavigationMobile extends React.Component {
             height: 0,
             isListMenuOpen: false,
         };
-        this.logo = React.createRef();
+        this.heighnavbar = React.createRef();
     }
 
     catchHeight = () => {
-       this.setState({height : this.logo.current.clientHeight});
+       this.setState({height : this.heighnavbar.current.clientHeight});
     };
     componentDidMount () {
         this.catchHeight();
+        console.log(this.state.height);
     };
 
     toggleListMenu = () => {
@@ -53,13 +51,12 @@ export class NavigationMobile extends React.Component {
 
         return (
             <>
-            <NavMobileWrapper>
+            <NavMobileWrapper
+                ref={this.heighnavbar}>
                 <h1>
                     <Link to={listItems[3].pathLink}>
-                        <img 
-                        src={LogoS} 
-                        id="LogoS" 
-                        ref={this.logo}
+                        <LogoCousinJackVertical
+                        id="LogoS"
                         />
                     </Link>
                 </h1>

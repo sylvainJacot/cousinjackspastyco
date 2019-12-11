@@ -8,7 +8,7 @@ const NavMobileListItemWrapper = styled.div`
 display: inline-block;
 li {
     display: inline-block;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     a {
         font-family: Arvo-Bold, sans-serif;
 font-size: 24px;
