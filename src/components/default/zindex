@@ -1,10 +1,17 @@
 z-index :
 
 1 Pasty
+  NavWrapper
 
-2 NavMobileListWrapper
+2
   ChooseYourPasty after
+  FreshlyPrepared
+  PastyNavLink
 
-3 NavMobileWrapper h1
+3
   NavMobileWrapper button
+  NavMobileListWrapper
+
+4
+  NavMobileWrapper h1
 

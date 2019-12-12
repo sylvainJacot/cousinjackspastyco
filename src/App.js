@@ -20,7 +20,6 @@ padding: 0 80px;
 `}
 
 ${media.desktopL`
-width: 1232px;
 margin: auto;
 `}
 `;

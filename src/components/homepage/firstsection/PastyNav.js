@@ -18,19 +18,21 @@ const PastyNavWrapper = styled.div`
 `;
 const PastyNavLink = styled.a`
 position: relative;
+z-index: 2;
 display: flex;
-flex-wrap: wrap;
-justify-items: center;
-width: min-content;
+flex-direction: column;
+align-items: center;
+margin-left: 16px;
 
   ${ChooseYourPasty} {
     position: relative;
+    display: inline-block;
     font-family: Arvo-Bold, sans-serif;
     text-transform: uppercase;
     color: ${colorsStyle.white};
     font-size: 16px;
-    margin-bottom: 48px;
-    line-height: 24px;
+    margin-bottom: 32px;
+    line-height: 16px;
     ${media.desktop`
         font-size: 24px;
         margin-bottom: 56px;
@@ -42,7 +44,7 @@ width: min-content;
     position: absolute;
     width: 64px;
     height: 64px;
-    left: -51px;
+    left: -48px;
     top: 8px;
     background: url("${svgicons.arrowHandDrawn}") no-repeat;
     background-size: contain;
@@ -63,21 +65,21 @@ width: min-content;
     &:before {
     content:"";
     display: block;
-    width: 160px;
-    height: 160px;
+    width: 146px;
+    height: 146px;
     border-radius: 50%;
     ${absoluteCenter};
     background: ${colorsStyle.white};
     ${media.desktop`
-        width: 178px;
-        height: 178px;
+        width: 168px;
+        height: 168px;
     `}
     }
     &:after {
      content: "";
      display: inline-block;
-     width: 200px;
-     height: 200px;
+     width: 184px;
+     height: 184px;
      position: absolute;
      top: 50%;
      right: 50%;
@@ -103,7 +105,7 @@ width: min-content;
   ${Pasty} {
     position: inherit;
     z-index: 1;
-    width: 100%;
+    width: 246px
     height: auto;
     ${media.desktop`
         width: 296px;
