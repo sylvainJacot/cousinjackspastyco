@@ -16,7 +16,7 @@ padding-top: ${props => props.logoHeight + 16}px;
 text-align:center;
 right: ${props => props.listMenuOpen ? '0px' : '-100vw'};
 transition: ${Animations.default};;
-z-index: 2;
+z-index: 3;
 ul {
     display: flex;
     flex-direction: column;

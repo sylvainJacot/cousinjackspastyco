@@ -14,7 +14,7 @@ position: relative;
     justify-content: center;
     `}
 h1 {
-    z-index: 3;
+    z-index: 4;
     a {
         display: block; 
 }
