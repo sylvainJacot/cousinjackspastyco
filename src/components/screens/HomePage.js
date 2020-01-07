@@ -10,7 +10,7 @@ export class HomePage extends React.Component {
         return (
             <>
                 <Firstsection/>
-                <Button>
+                <Button pathName="/MenuPage">
                     Test
                 </Button>
             </>

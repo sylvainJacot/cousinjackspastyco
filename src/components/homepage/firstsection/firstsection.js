@@ -67,6 +67,7 @@ export class Firstsection extends React.Component {
             <FirstSectionWrapper>
                 <FreshlyPrepared src={img.freshlyPrepared}/>
                 <PastyNav/>
+
             </FirstSectionWrapper>
         )
     }
