@@ -14,6 +14,7 @@ flex-direction: column;
 align-items: center;
 
       &:after {
+      z-index: -1;
       content: "";
       position: absolute;
       left:0;
@@ -24,6 +25,7 @@ align-items: center;
       opacity: 80%;
       }
       &:before {
+      z-index: -1;
       content: "";
       position: absolute;
       left:0;
@@ -56,6 +58,7 @@ const FreshlyPrepared = styled.img`
         grid-column: 1 / 6;
     `}
 `;
+
 
 
 export class Firstsection extends React.Component {

@@ -19,11 +19,11 @@ text-decoration: none;
 margin: 0 32px;
     }
 }
-`
+`;
 const UnderLine = styled.div`
 background-color: ${colorsStyle.primary};
 height: 1px;
-`
+`;
 
 export class NavMobileListItem extends React.Component {
     render() {

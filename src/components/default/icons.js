@@ -55,9 +55,9 @@ transition: ${Animations.default};
             </AWrapper>
         )
     }
-};
+  }
 
-  export class LogoCousinJackVertical extends React.Component {
+export class LogoCousinJackVertical extends React.Component {
     render() {
         const {menuActive} = this.props;
         return (
@@ -69,8 +69,8 @@ transition: ${Animations.default};
             </LogoCousinJackVerticalWrapper>
         )
     }
-};
-
-  export const svgicons = {
-      arrowHandDrawn: ArrowHandDrawn,
   }
+
+export const svgicons = {
+      arrowHandDrawn: ArrowHandDrawn,
+  };

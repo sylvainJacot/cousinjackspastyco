@@ -21,7 +21,7 @@ ul {
     display: flex;
     flex-direction: column;
 }
-`
+`;
 
 export class  NavMobileList extends React.Component {
     render() {

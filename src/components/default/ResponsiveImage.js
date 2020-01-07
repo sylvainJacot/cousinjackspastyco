@@ -8,7 +8,7 @@ export class ResponsiveImage extends React.Component {
         altImage: PropTypes.string,
         sourceDesktop: PropTypes.string,
         breakPoint: PropTypes.number
-    }
+    };
     render() {
         const {sourceMobile, altImage, sourceDesktop, breakPoint} = this.props;
         return (
@@ -25,4 +25,4 @@ export class ResponsiveImage extends React.Component {
             </picture>
         )
     }
-};
+}
