@@ -6,6 +6,7 @@ import {img} from '../../default/img';
 import {svgicons} from '../../default/icons';
 import {absoluteCenter} from '../../default/alignements';
 import {Animations} from '../../default/animations';
+import {Link} from "react-router-dom";
 
 const ChooseYourPasty = styled.p``;
 const Pasty = styled.img``;
@@ -16,13 +17,14 @@ const PastyNavWrapper = styled.div`
         justify-self: center;
     `}
 `;
-const PastyNavLink = styled.a`
+const PastyNavLink = styled(Link)`
 position: relative;
 z-index: 2;
 display: flex;
 flex-direction: column;
 align-items: center;
 margin-left: 16px;
+text-decoration: none;
 
   ${ChooseYourPasty} {
     position: relative;
@@ -116,9 +118,10 @@ margin-left: 16px;
 
 export class PastyNav extends React.Component {
     render() {
+        const {PathName} = this.props;
         return (
             <PastyNavWrapper>
-                <PastyNavLink>
+                <PastyNavLink to={PathName}>
                     <ChooseYourPasty>Choose your pasty</ChooseYourPasty>
                     <PastyWrapper>
                         <Pasty src={img.pasty}/>

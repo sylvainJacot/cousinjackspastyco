@@ -1,6 +1,6 @@
 import React from 'react';
 import {Firstsection} from '../homepage/firstsection/firstsection';
-import {Button} from "../buttons/Button";
+
 
 
 export class HomePage extends React.Component {
@@ -10,9 +10,6 @@ export class HomePage extends React.Component {
         return (
             <>
                 <Firstsection/>
-                <Button pathName="/MenuPage">
-                    Test
-                </Button>
             </>
         )
     }

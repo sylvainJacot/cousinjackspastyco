@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import {media} from '../default/mediaqueries';
 import {listItems} from '../../constant/navigation-mock';
 import {NavMobileList} from '../navigation/NavMobileList';
@@ -46,7 +46,8 @@ export class NavigationMobile extends React.Component {
 
     toggleListMenu = () => {
         this.setState(
-            {isListMenuOpen: !this.state.isListMenuOpen});
+            {isListMenuOpen: !this.state.isListMenuOpen},
+            );
     };
 
     render() {
@@ -64,9 +65,10 @@ export class NavigationMobile extends React.Component {
                         />
                     </Link>
                 </h1>
-                    <NavMobileList height={this.state.height} menuActive={this.state.isListMenuOpen}/>
+                    <NavMobileList height={this.state.height} menuActive={this.state.isListMenuOpen} onClickLink={this.toggleListMenu}/>
 
                  <IcBurger
+                     isOpen={this.state.menuOpen}
                     borderspasty={`${colorsStyle.secondary}`}
                     onClickListMenuButton={this.toggleListMenu}
                     menuActive={this.state.isListMenuOpen}
