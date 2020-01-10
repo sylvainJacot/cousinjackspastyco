@@ -5,7 +5,7 @@ export const sizes = {
     desktop: 1024,
     tablet: 768,
     mobileS: 320
-}
+};
 
 export const media = Object.keys(sizes).reduce((accumulator, label) => {
     const emSize = sizes[label] / 16;
@@ -15,4 +15,4 @@ export const media = Object.keys(sizes).reduce((accumulator, label) => {
     }
   `;
     return accumulator
-}, {})
+}, {});

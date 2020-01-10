@@ -1,6 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import {Route} from 'react-router-dom';
 import {colorsStyle} from '../default/colors';
 import {Animations} from '../default/animations';
 import {NavMobileListItem} from '../navigation/NavMobileListItem';
@@ -21,16 +22,17 @@ ul {
     display: flex;
     flex-direction: column;
 }
-`
+`;
 
 export class  NavMobileList extends React.Component {
     render() {
-        const {menuActive, height} = this.props;
+        const {menuActive, height,onClickLink} = this.props;
         return (
             <NavMobileListWrapper logoHeight={height} listMenuOpen={menuActive}>
                 <ul>
                 {listItems.map(listItem =>(
-                    <NavMobileListItem 
+                    <NavMobileListItem
+                        onClickLink={onClickLink}
                     key={listItem.id}
                     path={listItem.pathLink}
                     label={listItem.label}

@@ -36,7 +36,7 @@ export class NavItemDesktop extends React.Component {
         key: PropTypes.string,
         margesLi: PropTypes.string,
         href: PropTypes.string,
-    }
+    };
     render() {
         const {key, margesLi, pathLink, image, label,exact} = this.props;
         return (

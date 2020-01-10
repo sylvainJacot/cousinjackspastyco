@@ -19,19 +19,19 @@ text-decoration: none;
 margin: 0 32px;
     }
 }
-`
+`;
 const UnderLine = styled.div`
 background-color: ${colorsStyle.primary};
 height: 1px;
-`
+`;
 
 export class NavMobileListItem extends React.Component {
     render() {
-    const {key,path,label,image} = this.props;
+    const {key,path,label,image,onClickLink} = this.props;
         return (
             <NavMobileListItemWrapper>{image ? null :
                 <li key={key}>
-                    <Link to={path}>
+                    <Link to={path} onClick={onClickLink}>
                         {label}
                     </Link>
                     <UnderLine />

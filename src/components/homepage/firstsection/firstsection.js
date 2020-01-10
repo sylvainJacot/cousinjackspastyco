@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types'
 import styled from "styled-components";
 import {media} from '../../default/mediaqueries';
 import {colorsStyle} from "../../default/colors";
 import {img} from '../../default/img';
 import {PastyNav} from './PastyNav';
+import {Button} from "../../buttons/Button";
 
 const FirstSectionWrapper = styled.div`
 width: 100%;
@@ -14,6 +14,7 @@ flex-direction: column;
 align-items: center;
 
       &:after {
+      z-index: -1;
       content: "";
       position: absolute;
       left:0;
@@ -24,6 +25,7 @@ align-items: center;
       opacity: 80%;
       }
       &:before {
+      z-index: -1;
       content: "";
       position: absolute;
       left:0;
@@ -58,12 +60,17 @@ const FreshlyPrepared = styled.img`
 `;
 
 
+
 export class Firstsection extends React.Component {
     render() {
         return (
             <FirstSectionWrapper>
                 <FreshlyPrepared src={img.freshlyPrepared}/>
-                <PastyNav/>
+                <PastyNav PathName={'/MenuPage'}/>
+                <Button PathName={'/MenuPage'}>
+                    Test
+                </Button>
+
             </FirstSectionWrapper>
         )
     }
